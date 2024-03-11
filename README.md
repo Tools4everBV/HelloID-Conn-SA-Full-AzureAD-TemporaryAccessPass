@@ -5,7 +5,7 @@ This HelloID Service Automation Delegated Form can create a temporary Access Pas
  1. Search and select the target user
  2. Choose a timelimit in hours
  3. A switch to generate temporary Access Pass immediately
-  3. 1. The Acccess pass will created in the Form and shown in a grid
+    1. The Acccess pass will created in the Form and shown in a grid
  4. There is no task configured.
 
 ## Versioning
