@@ -110,11 +110,11 @@ After the all-in-one PowerShell script has run and created all the required reso
 ## Manual resources
 This Delegated Form uses the following resources in order to run
 
-### Powershell data source 'Azure-AD-temp-access-pass-generate-user-table-wildcard'
+#### Powershell data source 'Azure-AD-temp-access-pass-generate-user-table-wildcard'
 
-### Powershell data source 'Azure-AD-temp-access-pass-create-access-pass'
+#### Powershell data source 'Azure-AD-temp-access-pass-create-access-pass'
 
-### Delegated form task is not configured
+#### Delegated form task is not configured
 
 ## Getting help
 _If you need help, feel free to ask questions on our [forum](https://forum.helloid.com/forum/helloid-connectors/service-automation/194-helloid-sa-azure-ad-reset-password-enable-user)_
