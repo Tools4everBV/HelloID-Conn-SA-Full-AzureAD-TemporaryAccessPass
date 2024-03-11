@@ -1,0 +1,30 @@
+[
+    {
+        "key":  "id",
+        "type":  0
+    },
+    {
+        "key":  "isUsable",
+        "type":  0
+    },
+    {
+        "key":  "temporaryAccessPass",
+        "type":  0
+    },
+    {
+        "key":  "lifetimeInMinutes",
+        "type":  0
+    },
+    {
+        "key":  "startDateTime",
+        "type":  0
+    },
+    {
+        "key":  "methodUsabilityReason",
+        "type":  0
+    },
+    {
+        "key":  "lifetimeInHours",
+        "type":  0
+    }
+]

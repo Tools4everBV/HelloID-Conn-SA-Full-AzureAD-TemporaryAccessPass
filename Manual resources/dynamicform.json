@@ -1,0 +1,197 @@
+[
+    {
+        "label":  "Select user account",
+        "fields":  [
+                       {
+                           "key":  "searchfield",
+                           "templateOptions":  {
+                                                   "label":  "Search",
+                                                   "placeholder":  "Username or email address"
+                                               },
+                           "type":  "input",
+                           "summaryVisibility":  "Hide element",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "gridUsers",
+                           "templateOptions":  {
+                                                   "label":  "Select user",
+                                                   "required":  true,
+                                                   "grid":  {
+                                                                "columns":  [
+                                                                                {
+                                                                                    "headerName":  "Display Name",
+                                                                                    "field":  "DisplayName"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "User Principal Name",
+                                                                                    "field":  "UserPrincipalName"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Title",
+                                                                                    "field":  "Title"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Department",
+                                                                                    "field":  "Department"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Company",
+                                                                                    "field":  "Company"
+                                                                                }
+                                                                            ],
+                                                                "height":  300,
+                                                                "rowSelection":  "single"
+                                                            },
+                                                   "dataSourceConfig":  {
+                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
+                                                                            "input":  {
+                                                                                          "propertyInputs":  [
+                                                                                                                 {
+                                                                                                                     "propertyName":  "searchUser",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "searchfield"
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                                             ]
+                                                                                      }
+                                                                        }
+                                               },
+                           "type":  "grid",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  true
+                       }
+                   ]
+    },
+    {
+        "label":  "create Access Pass",
+        "fields":  [
+                       {
+                           "key":  "selecteduser",
+                           "templateOptions":  {
+                                                   "label":  "Selected User"
+                                               },
+                           "fieldGroup":  [
+                                              {
+                                                  "key":  "Displayname",
+                                                  "templateOptions":  {
+                                                                          "label":  "Display name",
+                                                                          "useDependOn":  true,
+                                                                          "dependOn":  "gridUsers",
+                                                                          "dependOnProperty":  "DisplayName",
+                                                                          "readonly":  true
+                                                                      },
+                                                  "type":  "input",
+                                                  "summaryVisibility":  "Hide element",
+                                                  "requiresTemplateOptions":  true,
+                                                  "requiresKey":  true,
+                                                  "requiresDataSource":  false
+                                              },
+                                              {
+                                                  "key":  "UserPrincipalName",
+                                                  "templateOptions":  {
+                                                                          "label":  "UserPrincipalName",
+                                                                          "readonly":  true,
+                                                                          "useDependOn":  true,
+                                                                          "dependOn":  "gridUsers",
+                                                                          "dependOnProperty":  "UserPrincipalName"
+                                                                      },
+                                                  "type":  "input",
+                                                  "summaryVisibility":  "Hide element",
+                                                  "requiresTemplateOptions":  true,
+                                                  "requiresKey":  true,
+                                                  "requiresDataSource":  false
+                                              }
+                                          ],
+                           "type":  "formrow",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "lifteTimeHours",
+                           "templateOptions":  {
+                                                   "label":  "lifetime (hours)",
+                                                   "max":  12,
+                                                   "min":  1
+                                               },
+                           "type":  "number",
+                           "defaultValue":  "10",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "temporaryAccessPass",
+                           "templateOptions":  {
+                                                   "label":  "Create Temporary Access Pass Now",
+                                                   "useSwitch":  true,
+                                                   "checkboxLabel":  "Yes"
+                                               },
+                           "type":  "boolean",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  false
+                       },
+                       {
+                           "key":  "tempAccessPass",
+                           "templateOptions":  {
+                                                   "label":  "Temporary Access Pass",
+                                                   "required":  false,
+                                                   "grid":  {
+                                                                "columns":  [
+                                                                                {
+                                                                                    "headerName":  "Temporary Access Pass",
+                                                                                    "field":  "temporaryAccessPass"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Lifetime In Hours",
+                                                                                    "field":  "lifetimeInHours"
+                                                                                },
+                                                                                {
+                                                                                    "headerName":  "Start Date",
+                                                                                    "field":  "startDateTime"
+                                                                                }
+                                                                            ],
+                                                                "height":  200,
+                                                                "rowSelection":  "single"
+                                                            },
+                                                   "dataSourceConfig":  {
+                                                                            "dataSourceGuid":  "$dataSourceGuid_1",
+                                                                            "input":  {
+                                                                                          "propertyInputs":  [
+                                                                                                                 {
+                                                                                                                     "propertyName":  "selectedUser",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "gridUsers"
+                                                                                                                                         }
+                                                                                                                 },
+                                                                                                                 {
+                                                                                                                     "propertyName":  "lifeTimeHours",
+                                                                                                                     "otherFieldValue":  {
+                                                                                                                                             "otherFieldKey":  "lifteTimeHours"
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                                             ]
+                                                                                      }
+                                                                        },
+                                                   "useFilter":  true,
+                                                   "useDefault":  false,
+                                                   "searchPlaceHolder":  "Search this data"
+                                               },
+                           "hideExpression":  "!model[\"temporaryAccessPass\"]",
+                           "type":  "grid",
+                           "summaryVisibility":  "Show",
+                           "requiresTemplateOptions":  true,
+                           "requiresKey":  true,
+                           "requiresDataSource":  true
+                       }
+                   ]
+    }
+]
